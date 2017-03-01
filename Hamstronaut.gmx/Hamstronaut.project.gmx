@@ -8,6 +8,8 @@
   <sprites name="sprites">
     <sprite>sprites\spr_home_button</sprite>
     <sprite>sprites\spr_iss</sprite>
+    <sprite>sprites\spr_iss_wall_horizontal</sprite>
+    <sprite>sprites\spr_iss_wall_vertical</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -23,6 +25,9 @@
     <object>objects\obj_home_continue_button</object>
     <object>objects\object3</object>
     <object>objects\obj_iss</object>
+    <object>objects\obj_iss_wall_horizontal</object>
+    <object>objects\object6</object>
+    <object>objects\obj_iss_wall_vertical</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_titlescreen</room>

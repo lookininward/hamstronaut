@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1280</width>
   <height>720</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>20</vsnap>
+  <hsnap>20</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -52,6 +52,42 @@
   </views>
   <instances>
     <instance objName="obj_iss" x="0" y="0" name="inst_5AF69A54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="1112" y="190" name="inst_49753C52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="1"/>
+    <instance objName="obj_iss_wall_vertical" x="1111" y="90" name="inst_AFF7244B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="1112" y="270" name="inst_AECFBAD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="1"/>
+    <instance objName="obj_iss_wall_vertical" x="147" y="92" name="inst_F91AFDF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="147" y="188" name="inst_A9448AD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="147" y="278" name="inst_E10F9748" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="160" y="358" name="inst_B002CE27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="240" y="358" name="inst_562F7306" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="340" y="358" name="inst_2848E35A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-1"/>
+    <instance objName="obj_iss_wall_horizontal" x="1000" y="358" name="inst_9A743B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="900" y="358" name="inst_569782E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="800" y="358" name="inst_39A2ABDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="720" y="358" name="inst_69C4B25D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="1060" y="357" name="inst_5D097C1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="160" y="80" name="inst_E6D0BDC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="256" y="80" name="inst_13A14A64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="351" y="81" name="inst_616A7C92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-2"/>
+    <instance objName="obj_iss_wall_horizontal" x="444" y="82" name="inst_EA2A9D1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="490" y="82" name="inst_1CCB6A2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="580" y="40" name="inst_D6A4129D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="620" y="40" name="inst_A7ACE919" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="721" y="81" name="inst_36B60903" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="818" y="82" name="inst_A8E771FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="916" y="83" name="inst_D65272EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="1014" y="84" name="inst_9879A21A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="717" y="360" name="inst_D85AEBC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="717" y="460" name="inst_2933C616" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="717" y="560" name="inst_F0115151" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="413" y="569" name="inst_46C7DF2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="414" y="472" name="inst_B26B8A4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="414" y="372" name="inst_08F64B6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="433" y="615" name="inst_0D868BF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="532" y="615" name="inst_76540DB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="620" y="614" name="inst_21D70DE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="700" y="0" name="inst_CC811B18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="571" y="0" name="inst_7825F454" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
