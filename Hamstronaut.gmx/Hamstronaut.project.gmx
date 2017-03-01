@@ -5,13 +5,20 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_home_button</sprite>
+  </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_home_title</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\object0</object>
+    <object>objects\obj_home_title</object>
+    <object>objects\txt_splash_title</object>
+    <object>objects\obj_home_continue_button</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_titlescreen</room>
