@@ -10,6 +10,7 @@
     <sprite>sprites\spr_iss</sprite>
     <sprite>sprites\spr_iss_wall_horizontal</sprite>
     <sprite>sprites\spr_iss_wall_vertical</sprite>
+    <sprite>sprites\spr_hamster</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -20,6 +21,7 @@
     <font>fonts\fnt_home_title</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_hamster</object>
     <object>objects\obj_home_title</object>
     <object>objects\txt_splash_title</object>
     <object>objects\obj_home_continue_button</object>
