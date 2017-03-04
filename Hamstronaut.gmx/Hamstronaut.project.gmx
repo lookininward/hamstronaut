@@ -30,6 +30,7 @@
     <object>objects\obj_iss_wall_horizontal</object>
     <object>objects\object6</object>
     <object>objects\obj_iss_wall_vertical</object>
+    <object>objects\obj_debug_text</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_titlescreen</room>
