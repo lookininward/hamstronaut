@@ -34,6 +34,7 @@
     <object>objects\obj_debug_text</object>
     <object>objects\obj_kitchen_table</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_titlescreen</room>
     <room>rooms\rm_iss</room>
