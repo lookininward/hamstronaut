@@ -14,6 +14,7 @@
     <sprite>sprites\spr_kitchen_table</sprite>
     <sprite>sprites\spr_wheel</sprite>
     <sprite>sprites\spr_camera</sprite>
+    <sprite>sprites\spr_tomatoes</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -37,6 +38,7 @@
     <object>objects\obj_kitchen_table</object>
     <object>objects\obj_wheel</object>
     <object>objects\obj_camera</object>
+    <object>objects\obj_tomatoes</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_titlescreen</room>

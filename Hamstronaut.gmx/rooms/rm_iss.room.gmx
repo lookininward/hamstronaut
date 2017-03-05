@@ -69,6 +69,7 @@
     <instance objName="obj_kitchen_table" x="1018" y="115" name="inst_B84E81B3" locked="0" code="" scaleX="0.429530203342438" scaleY="0.483050853013992" colour="4294967295" rotation="0"/>
     <instance objName="obj_wheel" x="194" y="114" name="inst_47841194" locked="0" code="" scaleX="0.64615386724472" scaleY="0.617924511432648" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera" x="839" y="118" name="inst_055A3144" locked="0" code="" scaleX="0.170278638601303" scaleY="0.174061432480812" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tomatoes" x="908" y="291" name="inst_2DA02CA8" locked="0" code="" scaleX="0.107395499944687" scaleY="0.106128551065922" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
