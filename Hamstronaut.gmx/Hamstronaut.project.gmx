@@ -12,6 +12,7 @@
     <sprite>sprites\spr_iss_wall_vertical</sprite>
     <sprite>sprites\spr_hamster</sprite>
     <sprite>sprites\spr_kitchen_table</sprite>
+    <sprite>sprites\spr_wheel</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -33,8 +34,8 @@
     <object>objects\obj_iss_wall_vertical</object>
     <object>objects\obj_debug_text</object>
     <object>objects\obj_kitchen_table</object>
+    <object>objects\obj_wheel</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_titlescreen</room>
     <room>rooms\rm_iss</room>

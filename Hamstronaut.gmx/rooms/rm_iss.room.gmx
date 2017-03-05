@@ -67,6 +67,7 @@
     <instance objName="obj_iss_wall_vertical" x="758" y="296" name="inst_50AAD4A4" locked="0" code="" scaleX="0.105263158679008" scaleY="0.709999978542328" colour="4294967295" rotation="0"/>
     <instance objName="obj_iss_wall_vertical" x="758" y="111" name="inst_0B1460C7" locked="0" code="" scaleX="0.105263158679008" scaleY="0.620000004768372" colour="4294967295" rotation="0"/>
     <instance objName="obj_kitchen_table" x="1018" y="115" name="inst_B84E81B3" locked="0" code="" scaleX="0.429530203342438" scaleY="0.483050853013992" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wheel" x="194" y="114" name="inst_47841194" locked="0" code="" scaleX="0.64615386724472" scaleY="0.617924511432648" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
