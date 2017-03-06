@@ -11,10 +11,10 @@
     <sprite>sprites\spr_iss_wall_horizontal</sprite>
     <sprite>sprites\spr_iss_wall_vertical</sprite>
     <sprite>sprites\spr_hamster</sprite>
-    <sprite>sprites\spr_kitchen_table</sprite>
-    <sprite>sprites\spr_wheel</sprite>
     <sprite>sprites\spr_camera</sprite>
+    <sprite>sprites\spr_kitchen_table</sprite>
     <sprite>sprites\spr_tomatoes</sprite>
+    <sprite>sprites\spr_wheel</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -35,10 +35,11 @@
     <object>objects\object6</object>
     <object>objects\obj_iss_wall_vertical</object>
     <object>objects\obj_debug_text</object>
-    <object>objects\obj_kitchen_table</object>
-    <object>objects\obj_wheel</object>
+    <object>objects\obj_health_bar</object>
     <object>objects\obj_camera</object>
+    <object>objects\obj_kitchen_table</object>
     <object>objects\obj_tomatoes</object>
+    <object>objects\obj_wheel</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_iss</room>
