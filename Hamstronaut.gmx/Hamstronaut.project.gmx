@@ -39,7 +39,6 @@
     <object>objects\obj_wheel</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_tomatoes</object>
-    <object>objects\obj_health_bar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_iss</room>
