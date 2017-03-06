@@ -29,8 +29,54 @@
 hamsterSpeed = 5;
 hamsterHeight = sprite_height;
 hamsterWidth = sprite_width;
+minHealthBarDistance = 50;
+maxHealthBarDistance = 500;
+healthBarDistanceLeft = 500;
+distanceTravelled = 0;
+
+
 x = 578;
 y = 520;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Diagonal movements
+var up_down_moved = keyboard_check(vk_up) || keyboard_check(vk_down);
+var left_right_moved = keyboard_check(vk_left) || keyboard_check(vk_right);
+
+if(up_down_moved &amp;&amp; left_right_moved) {
+    distanceTravelled++;
+    if(healthBarDistanceLeft &gt; minHealthBarDistance){
+        healthBarDistanceLeft--;
+    }
+} else if(up_down_moved || left_right_moved) {
+    distanceTravelled++;
+    if(healthBarDistanceLeft &gt; minHealthBarDistance){
+        healthBarDistanceLeft--;
+    }
+}
+
+obj_debug_text.debugMode = true;
+obj_debug_text.debugText = string(healthBarDistanceLeft);
 </string>
           </argument>
         </arguments>
