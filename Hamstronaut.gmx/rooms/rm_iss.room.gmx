@@ -58,7 +58,7 @@
     <instance objName="obj_iss_wall_vertical" x="443" y="373" name="inst_08F64B6B" locked="0" code="" scaleX="0.315789461135864" scaleY="2.4300000667572" colour="4294967295" rotation="0"/>
     <instance objName="obj_iss_wall_horizontal" x="448" y="616" name="inst_21D70DE9" locked="0" code="" scaleX="2.71000003814697" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_hamster" x="561" y="475" name="inst_7259F4E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_debug_text" x="351" y="44" name="inst_31EDE5B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_debug_text" x="312" y="48" name="inst_31EDE5B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_iss_wall_vertical" x="181" y="113" name="inst_809BA3C5" locked="0" code="" scaleX="0.421052634716034" scaleY="2.52999997138977" colour="4294967295" rotation="0"/>
     <instance objName="obj_iss_wall_horizontal" x="189" y="366" name="inst_835C7101" locked="0" code="" scaleX="3.4300000667572" scaleY="0.368421047925949" colour="4294967295" rotation="0"/>
     <instance objName="obj_iss_wall_horizontal" x="655" y="367" name="inst_84DF7CAE" locked="0" code="" scaleX="4.38000011444092" scaleY="0.315789461135864" colour="4294967295" rotation="0"/>
@@ -70,6 +70,7 @@
     <instance objName="obj_wheel" x="194" y="114" name="inst_47841194" locked="0" code="" scaleX="0.64615386724472" scaleY="0.617924511432648" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera" x="839" y="118" name="inst_055A3144" locked="0" code="" scaleX="0.170278638601303" scaleY="0.174061432480812" colour="4294967295" rotation="0"/>
     <instance objName="obj_tomatoes" x="908" y="291" name="inst_2DA02CA8" locked="0" code="" scaleX="0.107395499944687" scaleY="0.106128551065922" colour="4294967295" rotation="0"/>
+    <instance objName="obj_health_bar" x="858" y="554" name="inst_F9EBDFEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
