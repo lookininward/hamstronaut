@@ -53,13 +53,12 @@ healthBarHeight = 40;
             <kind>1</kind>
             <string>/// Refresh health bar
 
-var healthLevel = (obj_hamster.healthBarDistanceLeft / obj_hamster.maxHealthBarDistance) * 100;
 draw_healthbar(
     x, 
     y,
     x + healthBarWidth, 
     y + healthBarHeight,
-    healthLevel,
+    obj_hamster.healthLevel,
     c_black,
     c_red,
     c_green,

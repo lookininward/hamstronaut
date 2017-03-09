@@ -158,6 +158,9 @@ introBox3 = scr_pop_tip_box(txt, 0.8, 390, 165);
 with(introBox3) {
     instance_destroy();
 }
+
+scr_pop_food();
+obj_hamster.hasFood = true;
 </string>
           </argument>
         </arguments>

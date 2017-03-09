@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_game_music</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_home_button</sprite>
     <sprite>sprites\spr_home_button_glow</sprite>
@@ -17,6 +19,8 @@
     <sprite>sprites\spr_tomatoes</sprite>
     <sprite>sprites\spr_wheel</sprite>
     <sprite>sprites\spr_guitar</sprite>
+    <sprite>sprites\spr_food</sprite>
+    <sprite>sprites\spr_food_glow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -28,6 +32,7 @@
     <script>scripts\scr_glow_draw.gml</script>
     <script>scripts\scr_glow_step.gml</script>
     <script>scripts\scr_glow_setup.gml</script>
+    <script>scripts\scr_pop_food.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_home_title</font>
@@ -51,6 +56,7 @@
     <object>objects\obj_wheel</object>
     <object>objects\obj_tip_box</object>
     <object>objects\obj_guitar</object>
+    <object>objects\obj_food</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_guide</timeline>

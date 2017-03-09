@@ -26,13 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize Variables
-hamsterSpeed = 5;
+hamsterMaxSpeed = 7;
 hamsterHeight = sprite_height;
 hamsterWidth = sprite_width;
-minHealthBarDistance = 50;
-maxHealthBarDistance = 2500;
-healthBarDistanceLeft = 2000;
+minHealthBarDistance = 200;
+maxHealthBarDistance = 1000;
+healthBarDistanceLeft = 500;
 distanceTravelled = 0;
+firstFoodMessage = true;
+healthLevel = (healthBarDistanceLeft / maxHealthBarDistance) * 100;
+hamsterSpeed = (healthBarDistanceLeft / maxHealthBarDistance) * hamsterMaxSpeed;
+hasFood = false;
 
 timeline_index = tml_guide;
 timeline_position = 0;
@@ -67,20 +71,56 @@ y = 520;
 var up_down_moved = keyboard_check(vk_up) || keyboard_check(vk_down);
 var left_right_moved = keyboard_check(vk_left) || keyboard_check(vk_right);
 
-if(up_down_moved &amp;&amp; left_right_moved) {
+if(up_down_moved || left_right_moved) {
     distanceTravelled++;
     if(healthBarDistanceLeft &gt; minHealthBarDistance){
         healthBarDistanceLeft--;
-    }
-} else if(up_down_moved || left_right_moved) {
-    distanceTravelled++;
-    if(healthBarDistanceLeft &gt; minHealthBarDistance){
-        healthBarDistanceLeft--;
+    } else if(not hasFood) {
+        scr_pop_food();
+        hasFood = true;
     }
 }
 
-obj_debug_text.debugMode = true;
-//obj_debug_text.debugText = string(healthBarDistanceLeft);
+healthLevel = (healthBarDistanceLeft / maxHealthBarDistance) * 100;
+hamsterSpeed = (healthBarDistanceLeft / maxHealthBarDistance) * hamsterMaxSpeed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_food">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Show food tip
+
+if(!other.tipBox) {
+    var pointX = other.x + (other.sprite_width / 2);
+    var pointY = other.y + (other.sprite_height / 2);
+    var message = "Yummmyyyy... Click to eat";
+    tipBox = scr_pop_tip_box(message, 0.8, pointX, pointY);
+
+    if(firstFoodMessage) {
+        firstFoodMessage = true;
+        other.tipBox = tipBox;
+        
+        obj_debug_text.debugText = 'first message popped'
+    }
+
+}
 </string>
           </argument>
         </arguments>
@@ -257,8 +297,6 @@ if (y &lt; other.topY) { //bottom wall
 
 obj_debug_text.debugMode = true;
 obj_debug_text.debugText = "position: " + string(mouse_x) + ", " + string(mouse_y);
-
-scr_pop_tip_box("hello", 0.7, mouse_x, mouse_y);
 </string>
           </argument>
         </arguments>
