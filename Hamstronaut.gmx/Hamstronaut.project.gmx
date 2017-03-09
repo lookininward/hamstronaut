@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_home_button</sprite>
+    <sprite>sprites\spr_home_button_glow</sprite>
     <sprite>sprites\spr_iss</sprite>
     <sprite>sprites\spr_iss_wall_horizontal</sprite>
     <sprite>sprites\spr_iss_wall_vertical</sprite>
@@ -15,14 +16,22 @@
     <sprite>sprites\spr_kitchen_table</sprite>
     <sprite>sprites\spr_tomatoes</sprite>
     <sprite>sprites\spr_wheel</sprite>
+    <sprite>sprites\spr_guitar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
     <background>background\bg_iss</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_pop_tip_box.gml</script>
+    <script>scripts\scr_glow_draw.gml</script>
+    <script>scripts\scr_glow_step.gml</script>
+    <script>scripts\scr_glow_setup.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_home_title</font>
+    <font>fonts\fnt_tip</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_hamster</object>
@@ -40,10 +49,15 @@
     <object>objects\obj_kitchen_table</object>
     <object>objects\obj_tomatoes</object>
     <object>objects\obj_wheel</object>
+    <object>objects\obj_tip_box</object>
+    <object>objects\obj_guitar</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tml_guide</timeline>
+  </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_iss</room>
     <room>rooms\rm_titlescreen</room>
+    <room>rooms\rm_iss</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

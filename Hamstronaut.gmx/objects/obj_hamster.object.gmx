@@ -30,10 +30,14 @@ hamsterSpeed = 5;
 hamsterHeight = sprite_height;
 hamsterWidth = sprite_width;
 minHealthBarDistance = 50;
-maxHealthBarDistance = 500;
-healthBarDistanceLeft = 500;
+maxHealthBarDistance = 2500;
+healthBarDistanceLeft = 2000;
 distanceTravelled = 0;
 
+timeline_index = tml_guide;
+timeline_position = 0;
+timeline_running = true;
+timeline_loop = false;
 
 x = 578;
 y = 520;
@@ -76,7 +80,7 @@ if(up_down_moved &amp;&amp; left_right_moved) {
 }
 
 obj_debug_text.debugMode = true;
-obj_debug_text.debugText = string(healthBarDistanceLeft);
+//obj_debug_text.debugText = string(healthBarDistanceLeft);
 </string>
           </argument>
         </arguments>
@@ -227,6 +231,34 @@ if (y &lt; other.topY) { //bottom wall
           <argument>
             <kind>1</kind>
             <string>x = x - hamsterSpeed
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Print x, y location
+
+obj_debug_text.debugMode = true;
+obj_debug_text.debugText = "position: " + string(mouse_x) + ", " + string(mouse_y);
+
+scr_pop_tip_box("hello", 0.7, mouse_x, mouse_y);
 </string>
           </argument>
         </arguments>
