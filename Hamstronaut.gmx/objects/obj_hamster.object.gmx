@@ -26,18 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize Variables
+welcomed = false;
+oldHamsterMaxSpeed = 20;
 hamsterMaxSpeed = 20;
 hamsterHeight = sprite_height;
 hamsterWidth = sprite_width;
 minHealthBarDistance = 1000;
 maxHealthBarDistance = 3000;
 healthBarDistanceLeft = 2500;
-foodBarDistanceLeft = 2500;
-muscleBarDistanceLeft = 2500;
+foodBarDistanceLeft = 500;
+muscleBarDistanceLeft = 2000;
 distanceTravelled = 0;
 firstFoodMessage = true;
 healthLevel = (healthBarDistanceLeft / maxHealthBarDistance) * 100;
-foodLevel = (foodBarDistanceLeft / maxHealthBarDistance) * 100;
+foodLevel = (foodBarDistanceLeft / maxHealthBarDistance) * 100;;
 muscleLevel = (muscleBarDistanceLeft / maxHealthBarDistance) * 100;
 hamsterSpeed = (
     (foodBarDistanceLeft + muscleBarDistanceLeft + healthBarDistanceLeft) / 
@@ -52,6 +54,13 @@ hasFood = false;
 
 x = 578;
 y = 520;
+
+foodMessages[0] = 'To maintain energy and nutrition in space, Astronauts must eat three to four balanced meals and snacks per day, including: fruits, vegetables, grain, and protein.'
+foodMessages[1] = 'Getting enough calories, vitamins and minerals is as important for astronauts as it is for people living on Earth. Astronauts must eat about 2,000 calories per day.'
+foodMessages[2] = 'The typical menu on the ISS consists of fresh foods (fruits and vegetables), natural form foods (nuts and flatbread), dried or vacuum sealed protein (chicken, beef, turkey), and dehydrated foods and drinks (spinach and juices).'
+foodMessages[3] = 'In addition to having nutritional value, food in space must be small and lightweight to be stored efficiently on the ISS. Food must also be stored for long periods of time on the ISS: food must be processed, vacuum-sealed, dehydrated (water removed), and freeze-dried.'
+foodMessages[4] = 'Eating in space has improved a lot since the days of cold paste in aluminium tubes and cube-shaped bites. Today, space foods are similar to those eaten every day on Earth. They include frozen vegetables and desserts, refrigerated food, fruit and dairy products.'
+
 
 </string>
           </argument>
@@ -76,6 +85,7 @@ y = 520;
           <argument>
             <kind>1</kind>
             <string>/// Diagonal movements
+
 var up_down_moved = keyboard_check(vk_up) || keyboard_check(vk_down);
 var left_right_moved = keyboard_check(vk_left) || keyboard_check(vk_right);
 
@@ -91,19 +101,31 @@ if(up_down_moved || left_right_moved) {
     
     if(healthBarDistanceLeft &gt; minHealthBarDistance){
         healthBarDistanceLeft -= obj_hamster.hamsterSpeed;
-    } else if (!obj_guitar.pending) {
-        obj_guitar.pending = true;
+    } else if (!obj_guitar.glow) {
+        if(!obj_mental_bar.glowed) {
+            messages[0] = "Maintaining mental health is important for long stays in space.
+Why don’t you go play some guitar to relax.";
+            scr_pop_tip_box_sal(messages, 0);
+        
+            obj_mental_bar.glow = true;
+        }
+        obj_guitar.glow = true;
     }
     
     if(muscleBarDistanceLeft &gt; minHealthBarDistance){
         muscleBarDistanceLeft -= obj_hamster.hamsterSpeed;
     } else if (!obj_wheel.pending) {
-        obj_wheel.pending = true;
+        if(!obj_muscle_bar.glowed) {
+            messages[0] = "You might have noticed that your physical health needs attention. 
+Why don’t you go over to the hamster wheel and get some exercise?";
+
+            scr_pop_tip_box_sal(messages, 0);
+        
+            obj_muscle_bar.glow = true;
+        }
+        obj_wheel.glow = true;
     }
 }
-
-obj_debug_text.debugMode = true;
-obj_debug_text.debugText = string(foodBarDistanceLeft) + ', ' + string(healthBarDistanceLeft) + ', ' + string(muscleBarDistanceLeft);
 
 healthLevel = (healthBarDistanceLeft / maxHealthBarDistance) * 100;
 foodLevel = (foodBarDistanceLeft / maxHealthBarDistance) * 100;
@@ -138,14 +160,45 @@ hamsterSpeed = (
             <string>/// Show food tip
 
 if(!other.tipBox) {
-    messages[0] = 'Yummmyyyy... Press "spacebar" to eat';
+    messages[0] = 'Press [Spacebar] to eat.';
     other.tipBox = scr_pop_tip_box_sal(messages, 0);
-        
+    other.tipBox.navDestroys = false;
+    other.pending = true;
 
     if(firstFoodMessage) {
         firstFoodMessage = true;
     }
 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_guitar">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Show food tip
+
+if(!other.tipBox) {
+    messages[0] = 'Press [Spacebar] to play guitar.';
+    other.tipBox = scr_pop_tip_box_sal(messages, 0);
+    other.tipBox.navDestroys = false;
+    other.pending = true;
 }
 </string>
           </argument>
@@ -171,9 +224,12 @@ if(!other.tipBox) {
             <kind>1</kind>
             <string>/// Show wheels tip
 
-messages[0] = 'Press "spacebar" to complete exercise';
-other.tipBox = scr_pop_tip_box_sal(messages, 0);
-other.pending = true;
+if(!other.pending) {
+    messages[0] = ' Press [Spacebar] to exercise.';
+    other.tipBox = scr_pop_tip_box_sal(messages, 0);
+    other.tipBox.navDestroys = false;
+    other.pending = true;
+}
 </string>
           </argument>
         </arguments>
@@ -198,14 +254,14 @@ other.pending = true;
             <kind>1</kind>
             <string>/// Do next tomato task
 if(
-    obj_hamster.foodBarDistanceLeft &lt; (0.5 * obj_hamster.maxHealthBarDistance) ||
-    obj_hamster.healthBarDistanceLeft &lt; (0.5 * obj_hamster.maxHealthBarDistance) ||
-    obj_hamster.muscleBarDistanceLeft &lt; (0.2 * obj_hamster.maxHealthBarDistance)
+    obj_hamster.foodBarDistanceLeft &lt; (0.35 * obj_hamster.maxHealthBarDistance) ||
+    obj_hamster.healthBarDistanceLeft &lt; (0.35 * obj_hamster.maxHealthBarDistance) ||
+    obj_hamster.muscleBarDistanceLeft &lt; (0.15 * obj_hamster.maxHealthBarDistance)
 ) {
-    messages[0] = 'You need minimun 50% of food power, 50% of mental wellness and 20% of excercise level to perform this experiment';
+    messages[0] = "Looks like you'll have to take care of yourself before you conduct that experiment. Make sure your nutrition, physical health, and mental state are on point before you come back.";
     tipBox = scr_pop_tip_box_sal(messages, 0);
     
-    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
     
 } else if(!other.done &amp;&amp; !other.pending) {
     next = other.index + 1;
@@ -215,6 +271,7 @@ if(
 
         messages[0] = 'Press "spacebar" to perform the experiment';
         other.tipBox = scr_pop_tip_box_sal(messages, 0);
+        other.tipBox.navDestroys = false;
 
 
         //other.sprite_index = other.stages[other.index];

@@ -34,6 +34,12 @@ stages[3] = spr_tomato_stage_4;
 stages[4] = spr_tomato_stage_5;
 stages[5] = spr_tomato_stage_6;
 
+stageWelcomeMessages[1] = "Excellent, you've completed the first step in the experiment. That was exhausting, wasn't it? Come back and do the next step when you are back in shape!";
+stageWelcomeMessages[2] = "Awesome! You've completed the second step in the experiment.";
+stageWelcomeMessages[3] = "The third stage is not the last experiment.";
+stageWelcomeMessages[4] = "You are almost there. Are the tomatoes not looking great?";
+stageWelcomeMessages[5] = "You did it! You completed your mission. Congratulations young AstroHamster. I'm sure this is the first of many missions to come!";
+
 index = 0;
 done = false;
 pending = false;
@@ -61,8 +67,8 @@ pending = false;
             <kind>1</kind>
             <string>/// Next tomato phase
 if(pending) {
-    sprite_index = other.stages[other.index];
-    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    sprite_index = stages[index];
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
     with(tipBox) {
         instance_destroy();
     }
@@ -71,6 +77,9 @@ if(pending) {
     obj_hamster.foodBarDistanceLeft -= (0.3 * obj_hamster.maxHealthBarDistance);
     obj_hamster.healthBarDistanceLeft -= (0.3 * obj_hamster.maxHealthBarDistance);
     obj_hamster.muscleBarDistanceLeft -= (0.1 * obj_hamster.maxHealthBarDistance);
+    
+    messages[0] = stageWelcomeMessages[index];
+    scr_pop_tip_box_sal(messages, 0);
 }
 </string>
           </argument>

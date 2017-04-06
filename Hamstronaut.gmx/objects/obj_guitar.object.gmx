@@ -29,6 +29,8 @@
 scr_glow_setup();
 tipBox = false;
 pending = false;
+glow = false;
+
 </string>
           </argument>
         </arguments>
@@ -52,7 +54,7 @@ pending = false;
           <argument>
             <kind>1</kind>
             <string>/// Setup glower
-if(pending) {
+if(glow) {
     scr_glow_step();
 }
 </string>
@@ -80,7 +82,7 @@ if(pending) {
             <string>// consume excercise
 
 if (tipBox) {
-    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
     
     with(tipBox){
         instance_destroy();
@@ -92,6 +94,24 @@ if (tipBox) {
 if(pending) {
     obj_hamster.healthBarDistanceLeft = obj_hamster.maxHealthBarDistance;
     pending = false;
+    glow = false;
+    obj_mental_bar.glow = false;
+    
+    if(!obj_hamster.welcomed) {
+        messages[0] = 'Tapping into that zen moment I see.'
+        messages[1] = 'Now you know that keeping your nutritional, physical, and mental health is important to a healthy lifestyle in this environment. Keep an eye on those bars. They will need your attention as you go about your mission aboard the ISS.';
+        scr_pop_tip_box_sal(messages, 0);
+        obj_hamster.welcomed = true;
+    } else {
+        followUpMessages[0] = 'Some astronauts take along their own instruments to relax in space. Canadian astronaut Chris Hadfield is known for bringing his acoustic guitar.';
+        followUpMessages[1] = 'Many astronauts say that their favourite activity is to gaze out the window and admire Earth. Canadian astronauts Chris Hadfield and Roberta Bondar are known for their photography of Earth from space.';
+        followUpMessages[2] = 'Time for relaxation and recreation is essential. To reduce boredom, homesickness and isolation, astronauts are able to receive a weekly video telephone call from home, as well as daily email messages.';
+        followUpMessages[3] = 'There is a wide choice of leisure activities, since crew members are allowed to take along their personal choice of entertainment, including : checkers, chess, books, and CDs.';
+        followUpMessages[4] = 'Astronauts receive daily news updates keep them in touch with events back on Earth. Communication sessions with schools and amateur radio operators are common.';
+        
+        messages[0] = followUpMessages[irandom(4)];
+        scr_pop_tip_box_sal(messages, 0);
+    }
 }
 
 </string>
@@ -118,7 +138,7 @@ if(pending) {
             <kind>1</kind>
             <string>///Setup glower
 
-if(pending) {
+if(glow) {
     scr_glow_draw(spr_guitar, spr_guitar_glow);
 } else {
     sprite_index = spr_guitar;

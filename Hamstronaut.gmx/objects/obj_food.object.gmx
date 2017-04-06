@@ -28,6 +28,7 @@
             <string>/// Start glower
 scr_glow_setup();
 tipBox = false;
+pending = false;
 </string>
           </argument>
         </arguments>
@@ -75,17 +76,27 @@ scr_glow_step();
           <argument>
             <kind>1</kind>
             <string>if (tipBox) {
-    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
     
     with(tipBox){
         instance_destroy();
     }
 }
 
-obj_hamster.foodBarDistanceLeft = obj_hamster.maxHealthBarDistance;
-obj_hamster.hasFood = false;
-instance_destroy();
+if(pending) {
+    obj_hamster.foodBarDistanceLeft = obj_hamster.maxHealthBarDistance;
+    obj_hamster.hasFood = false;
+    instance_destroy();
 
+
+    if(!obj_hamster.welcomed) {
+        messages[0] = 'Great, you are looking better already.. though there are a few other things to attend to.';
+        scr_pop_tip_box_sal(messages, 0);
+    } else {
+        messages[0] = obj_hamster.foodMessages[irandom(4)];
+        scr_pop_tip_box_sal(messages, 0);
+    }
+}
 </string>
           </argument>
         </arguments>

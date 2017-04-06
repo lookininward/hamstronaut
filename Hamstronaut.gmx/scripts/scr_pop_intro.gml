@@ -1,22 +1,13 @@
 /// Pops up intro messages
 
-messages[0] = 'My name is SAL… 
-Your mission is to complete science experiments,
-communicate with Earth, and maintain the ISS.
+messages[0] = 'Welcome aboard the International Space Station!
+My name is SAL, an artificial intelligence designed to guide you through your mission.';
 
-To do this, you must KEEP YOURSELF HEALTHY.';
-
-messages[1] = 'You will need enough Energy and Strength to complete tasks.
-
-This is your health meter.
-
-It reduces as you move around and increases when you eat.';
-
-messages[2] = 'You must be hungry after your long trip from Earth.
-Get yourself some food.
-';
+messages[1] = 'Before we get to that.. you are looking a bit hungry after your trip.
+Why don’t you go over to the kitchen and get something to eat.';
 
 index = 0;
 
-//introBox1 = scr_pop_tip_box_sal(messages, 0);
+box = scr_pop_tip_box_sal(messages, 0);
+box.isIntro = true;
 

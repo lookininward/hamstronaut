@@ -33,7 +33,42 @@ time = 0;
 hasNext = false;
 hasPrevious = false;
 destroyable = false;
+oldHamsterMaxSpeed = obj_hamster.hamsterMaxSpeed;
+navDestroys = true;
+isIntro = false;
+glowObject = false;
 depth = depth - instance_number(obj_tip_box);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Destroy and move to previous if hasPrevious
+
+obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
+instance_destroy();
+    
+if(hasNext) {
+        newBox = scr_pop_tip_box_sal(messageSet, nextIndex);
+}
+
 </string>
           </argument>
         </arguments>
@@ -64,8 +99,6 @@ if(time &lt; text_length) {
 } else {
     destroyable = true;
 }
-
-
 
 
 draw_set_alpha(alpha);
@@ -131,6 +164,10 @@ draw_text_ext(
 );
 
 draw_set_alpha(1);
+
+if(glowObject) {
+    glowObject.glow = true;
+}
 </string>
           </argument>
         </arguments>
@@ -155,11 +192,23 @@ draw_set_alpha(1);
             <kind>1</kind>
             <string>/// Destroy and move to next if hasNext
 
-if(destroyable) {
-    obj_hamster.hamsterMaxSpeed = oldHamsterMaxSpeed;
+if(destroyable &amp;&amp; navDestroys) {
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
+    
     instance_destroy();
+    
+    if(isIntro &amp;&amp; index == 1) {
+        obj_food_bar.glow = false;
+    }
+    
     if(hasNext) {
         newBox = scr_pop_tip_box_sal(messageSet, nextIndex);
+        newBox.isIntro = isIntro;
+        
+        if(isIntro &amp;&amp; nextIndex == 1) {
+            obj_food_bar.glow = true;
+            //scr_pop_food();
+        }
     }
 }
 
@@ -188,8 +237,8 @@ if(destroyable) {
             <kind>1</kind>
             <string>/// Destroy and move to previous if hasPrevious
 
-if(destroyable) {
-    obj_hamster.hamsterMaxSpeed = oldHamsterMaxSpeed;
+if(destroyable &amp;&amp; navDestroys) {
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
     instance_destroy();
     
     if(hasPrevious) {

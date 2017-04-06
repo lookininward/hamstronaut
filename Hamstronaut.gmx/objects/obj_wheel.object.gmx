@@ -29,6 +29,7 @@
 scr_glow_setup();
 tipBox = false;
 pending = false;
+glow = false;
 </string>
           </argument>
         </arguments>
@@ -52,7 +53,7 @@ pending = false;
           <argument>
             <kind>1</kind>
             <string>/// Setup glower
-if(pending) {
+if(glow) {
     scr_glow_step();
 }
 </string>
@@ -80,7 +81,7 @@ if(pending) {
             <string>// consume excercise
 
 if (tipBox) {
-    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    obj_hamster.hamsterMaxSpeed = obj_hamster.oldHamsterMaxSpeed;
     
     with(tipBox){
         instance_destroy();
@@ -92,6 +93,23 @@ if (tipBox) {
 if(pending) {
     obj_hamster.muscleBarDistanceLeft = obj_hamster.maxHealthBarDistance;
     pending = false;
+    glow = false;
+    obj_muscle_bar.glow = false;
+    
+    if(!obj_hamster.welcomed) {
+        messages[0] = 'Those muscles are growing stronger already!';
+        scr_pop_tip_box_sal(messages, 0);
+    } else {
+        followUpMessages[0] = 'In microgravity (low gravity, in orbit), bodies do not have to fight the physical pull of gravity to move around and lift things. Because of this, bones and muscles are weakened. Astronauts lose an average of 1% of their bone density (strength) per month in space.';
+        followUpMessages[1] = 'Muscles are also weakened by long periods of low gravity, including the heart and lungs. For example, the heart does not have to work as hard to pump blood in space, so it gets lazy. To keep a healthy heart and strong muscles, Astronauts must exercise each day.';
+        followUpMessages[2] = "Major changes occur in the human body during long space missions. These include gradual loss of muscle and bone, and changes related to the heart and lungs. Such changes can affect astronauts' well-being and productivity, both in orbit and after their return to Earth.";
+        followUpMessages[3] = 'On Earth, we rely on our muscles to walk, lift objects and climb stairs. However, in space muscles become weaker when there is no gravity to overcome. To maintain overall health and strength in space, astronauts must exercise two hours per day.';
+        followUpMessages[4] = 'Among the machines used in space for exercise are treadmills for running on the spot and exercise bicycles. These are important for strengthening muscles and improving blood circulation.';
+        followUpMessages[5] = 'One new machine being developed is the Flywheel Exercise Device. This includes a spinning wheel and can be used for exercise both in space and on Earth.';
+        
+        messages[0] = followUpMessages[irandom(5)];
+        scr_pop_tip_box_sal(messages, 0);
+    }
 }
 
 </string>
@@ -118,7 +136,7 @@ if(pending) {
             <kind>1</kind>
             <string>///Setup glower
 
-if(pending) {
+if(glow) {
     scr_glow_draw(spr_wheel, spr_wheel_glow);
 } else {
     sprite_index = spr_wheel;
