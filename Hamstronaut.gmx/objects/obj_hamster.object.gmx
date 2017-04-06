@@ -26,25 +26,33 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize Variables
-hamsterMaxSpeed = 7;
+hamsterMaxSpeed = 20;
 hamsterHeight = sprite_height;
 hamsterWidth = sprite_width;
-minHealthBarDistance = 200;
-maxHealthBarDistance = 1000;
-healthBarDistanceLeft = 500;
+minHealthBarDistance = 1000;
+maxHealthBarDistance = 3000;
+healthBarDistanceLeft = 2500;
+foodBarDistanceLeft = 2500;
+muscleBarDistanceLeft = 2500;
 distanceTravelled = 0;
 firstFoodMessage = true;
 healthLevel = (healthBarDistanceLeft / maxHealthBarDistance) * 100;
-hamsterSpeed = (healthBarDistanceLeft / maxHealthBarDistance) * hamsterMaxSpeed;
+foodLevel = (foodBarDistanceLeft / maxHealthBarDistance) * 100;
+muscleLevel = (muscleBarDistanceLeft / maxHealthBarDistance) * 100;
+hamsterSpeed = (
+    (foodBarDistanceLeft + muscleBarDistanceLeft + healthBarDistanceLeft) / 
+    (maxHealthBarDistance * 3)
+) * hamsterMaxSpeed;
 hasFood = false;
 
-timeline_index = tml_guide;
-timeline_position = 0;
-timeline_running = true;
-timeline_loop = false;
+//timeline_index = tml_guide;
+//timeline_position = 0;
+//timeline_running = true;
+//timeline_loop = false;
 
 x = 578;
 y = 520;
+
 </string>
           </argument>
         </arguments>
@@ -72,17 +80,39 @@ var up_down_moved = keyboard_check(vk_up) || keyboard_check(vk_down);
 var left_right_moved = keyboard_check(vk_left) || keyboard_check(vk_right);
 
 if(up_down_moved || left_right_moved) {
-    distanceTravelled++;
-    if(healthBarDistanceLeft &gt; minHealthBarDistance){
-        healthBarDistanceLeft--;
+    distanceTravelled += obj_hamster.hamsterSpeed;
+    
+    if(foodBarDistanceLeft &gt; minHealthBarDistance){
+        foodBarDistanceLeft -= obj_hamster.hamsterSpeed;
     } else if(not hasFood) {
         scr_pop_food();
         hasFood = true;
     }
+    
+    if(healthBarDistanceLeft &gt; minHealthBarDistance){
+        healthBarDistanceLeft -= obj_hamster.hamsterSpeed;
+    } else if (!obj_guitar.pending) {
+        obj_guitar.pending = true;
+    }
+    
+    if(muscleBarDistanceLeft &gt; minHealthBarDistance){
+        muscleBarDistanceLeft -= obj_hamster.hamsterSpeed;
+    } else if (!obj_wheel.pending) {
+        obj_wheel.pending = true;
+    }
 }
 
+obj_debug_text.debugMode = true;
+obj_debug_text.debugText = string(foodBarDistanceLeft) + ', ' + string(healthBarDistanceLeft) + ', ' + string(muscleBarDistanceLeft);
+
 healthLevel = (healthBarDistanceLeft / maxHealthBarDistance) * 100;
+foodLevel = (foodBarDistanceLeft / maxHealthBarDistance) * 100;
+muscleLevel = (muscleBarDistanceLeft / maxHealthBarDistance) * 100;
 hamsterSpeed = (healthBarDistanceLeft / maxHealthBarDistance) * hamsterMaxSpeed;
+hamsterSpeed = (
+    (foodBarDistanceLeft + muscleBarDistanceLeft + healthBarDistanceLeft) / 
+    (maxHealthBarDistance * 3)
+) * hamsterMaxSpeed;
 </string>
           </argument>
         </arguments>
@@ -108,18 +138,89 @@ hamsterSpeed = (healthBarDistanceLeft / maxHealthBarDistance) * hamsterMaxSpeed;
             <string>/// Show food tip
 
 if(!other.tipBox) {
-    var pointX = other.x + (other.sprite_width / 2);
-    var pointY = other.y + (other.sprite_height / 2);
-    var message = "Yummmyyyy... Click to eat";
-    tipBox = scr_pop_tip_box(message, 0.8, pointX, pointY);
+    messages[0] = 'Yummmyyyy... Press "spacebar" to eat';
+    other.tipBox = scr_pop_tip_box_sal(messages, 0);
+        
 
     if(firstFoodMessage) {
         firstFoodMessage = true;
-        other.tipBox = tipBox;
-        
-        obj_debug_text.debugText = 'first message popped'
     }
 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_wheel">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Show wheels tip
+
+messages[0] = 'Press "spacebar" to complete exercise';
+other.tipBox = scr_pop_tip_box_sal(messages, 0);
+other.pending = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_tomatoes">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Do next tomato task
+if(
+    obj_hamster.foodBarDistanceLeft &lt; (0.5 * obj_hamster.maxHealthBarDistance) ||
+    obj_hamster.healthBarDistanceLeft &lt; (0.5 * obj_hamster.maxHealthBarDistance) ||
+    obj_hamster.muscleBarDistanceLeft &lt; (0.2 * obj_hamster.maxHealthBarDistance)
+) {
+    messages[0] = 'You need minimun 50% of food power, 50% of mental wellness and 20% of excercise level to perform this experiment';
+    tipBox = scr_pop_tip_box_sal(messages, 0);
+    
+    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    
+} else if(!other.done &amp;&amp; !other.pending) {
+    next = other.index + 1;
+    if(next &lt; array_length_1d(other.stages)) {
+        other.index = next;
+        other.pending = true;
+
+        messages[0] = 'Press "spacebar" to perform the experiment';
+        other.tipBox = scr_pop_tip_box_sal(messages, 0);
+
+
+        //other.sprite_index = other.stages[other.index];
+    } else {
+        other.done = true
+    }
 }
 </string>
           </argument>

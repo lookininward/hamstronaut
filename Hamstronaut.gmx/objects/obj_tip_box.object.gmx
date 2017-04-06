@@ -30,6 +30,9 @@
 alpha = 0;
 print = "";
 time = 0;
+hasNext = false;
+hasPrevious = false;
+destroyable = false;
 depth = depth - instance_number(obj_tip_box);
 </string>
           </argument>
@@ -58,7 +61,11 @@ depth = depth - instance_number(obj_tip_box);
 if(time &lt; text_length) {
     time += spd;
     print = string_copy(text, 0, time);
+} else {
+    destroyable = true;
 }
+
+
 
 
 draw_set_alpha(alpha);
@@ -70,9 +77,46 @@ if(alpha &lt; 1) {
 
 draw_set_font(font);
 draw_set_color(c_gray);
-draw_rectangle(x, y, x+boxwidth, y+boxheight, 0);
+draw_roundrect(x, y, x+boxwidth, y+boxheight, 0);
 draw_set_color(c_black);
-draw_rectangle(x, y, x+boxwidth, y+boxheight, 1);
+draw_roundrect(x, y, x+boxwidth, y+boxheight, 1);
+
+triangleOffset = 30;
+triangleWidth = 35;
+triangleHeight = 15;
+draw_set_color(c_gray);
+draw_triangle(
+    x + triangleOffset, 
+    y + boxheight, 
+    x + triangleOffset + triangleWidth,
+    y + boxheight,
+    x + triangleOffset + (triangleWidth / 2),
+    y + boxheight + triangleHeight,
+    false
+);
+draw_set_color(c_black);
+draw_triangle(
+    x + triangleOffset, 
+    y + boxheight, 
+    x + triangleOffset + triangleWidth,
+    y + boxheight,
+    x + triangleOffset + (triangleWidth / 2),
+    y + boxheight + triangleHeight,
+    true
+);
+draw_set_color(c_gray);
+draw_line(
+    x + triangleOffset - 1, 
+    y + boxheight - 1, 
+    x + triangleOffset + triangleWidth + 1,
+    y + boxheight - 1,
+);
+draw_line(
+    x + triangleOffset - 1, 
+    y + boxheight, 
+    x + triangleOffset + triangleWidth + 1,
+    y + boxheight,
+);
 
 
 draw_set_color(c_white);
@@ -85,7 +129,74 @@ draw_text_ext(
     font_size + (font_size/2),
     maxlength
 );
+
 draw_set_alpha(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Destroy and move to next if hasNext
+
+if(destroyable) {
+    obj_hamster.hamsterMaxSpeed = oldHamsterMaxSpeed;
+    instance_destroy();
+    if(hasNext) {
+        newBox = scr_pop_tip_box_sal(messageSet, nextIndex);
+    }
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Destroy and move to previous if hasPrevious
+
+if(destroyable) {
+    obj_hamster.hamsterMaxSpeed = oldHamsterMaxSpeed;
+    instance_destroy();
+    
+    if(hasPrevious) {
+        newBox = scr_pop_tip_box_sal(messageSet, prevIndex);
+    }
+}
+
 </string>
           </argument>
         </arguments>

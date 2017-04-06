@@ -10,6 +10,7 @@ obj_text_instance = instance_create(argument2, argument3, obj_tip_box);
 with(obj_text_instance) {
     padding = 10;
     maxlength = view_wview[0];
+    maxlength = 350;
     text = argument0;
     spd = argument1;
     font = fnt_tip;

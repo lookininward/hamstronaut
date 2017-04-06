@@ -18,9 +18,21 @@
     <sprite>sprites\spr_kitchen_table</sprite>
     <sprite>sprites\spr_tomatoes</sprite>
     <sprite>sprites\spr_wheel</sprite>
+    <sprite>sprites\spr_wheel_glow</sprite>
     <sprite>sprites\spr_guitar</sprite>
+    <sprite>sprites\spr_guitar_glow</sprite>
     <sprite>sprites\spr_food</sprite>
     <sprite>sprites\spr_food_glow</sprite>
+    <sprite>sprites\spr_sal</sprite>
+    <sprite>sprites\spr_food_bar_icon</sprite>
+    <sprite>sprites\spr_mental_bar_icon</sprite>
+    <sprite>sprites\spr_muscle_bar_icon</sprite>
+    <sprite>sprites\spr_tomato_stage_1</sprite>
+    <sprite>sprites\spr_tomato_stage_2</sprite>
+    <sprite>sprites\spr_tomato_stage_3</sprite>
+    <sprite>sprites\spr_tomato_stage_4</sprite>
+    <sprite>sprites\spr_tomato_stage_5</sprite>
+    <sprite>sprites\spr_tomato_stage_6</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_titlescreen</background>
@@ -29,10 +41,13 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_pop_tip_box.gml</script>
+    <script>scripts\scr_pop_tip_box_sal.gml</script>
     <script>scripts\scr_glow_draw.gml</script>
     <script>scripts\scr_glow_step.gml</script>
     <script>scripts\scr_glow_setup.gml</script>
     <script>scripts\scr_pop_food.gml</script>
+    <script>scripts\script7.gml</script>
+    <script>scripts\scr_pop_intro.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_home_title</font>
@@ -49,7 +64,9 @@
     <object>objects\object6</object>
     <object>objects\obj_iss_wall_vertical</object>
     <object>objects\obj_debug_text</object>
-    <object>objects\obj_health_bar</object>
+    <object>objects\obj_mental_bar</object>
+    <object>objects\obj_muscle_bar</object>
+    <object>objects\obj_food_bar</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_kitchen_table</object>
     <object>objects\obj_tomatoes</object>
@@ -57,13 +74,17 @@
     <object>objects\obj_tip_box</object>
     <object>objects\obj_guitar</object>
     <object>objects\obj_food</object>
+    <object>objects\obj_sal</object>
+    <object>objects\obj_food_bar_icon</object>
+    <object>objects\obj_muscle_bar_icon</object>
+    <object>objects\obj_mental_bar_icon</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_guide</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_titlescreen</room>
     <room>rooms\rm_iss</room>
+    <room>rooms\rm_titlescreen</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -57,7 +57,7 @@ scr_glow_step();
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="5" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -75,12 +75,15 @@ scr_glow_step();
           <argument>
             <kind>1</kind>
             <string>if (tipBox) {
+    obj_hamster.hamsterMaxSpeed = tipBox.oldHamsterMaxSpeed;
+    
     with(tipBox){
         instance_destroy();
     }
 }
 
-obj_hamster.healthBarDistanceLeft = obj_hamster.maxHealthBarDistance;
+obj_hamster.foodBarDistanceLeft = obj_hamster.maxHealthBarDistance;
+obj_hamster.hasFood = false;
 instance_destroy();
 
 </string>

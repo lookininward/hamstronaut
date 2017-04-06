@@ -52,27 +52,36 @@
   </views>
   <instances>
     <instance objName="obj_iss" x="0" y="0" name="inst_5AF69A54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="1092" y="112" name="inst_AFF7244B" locked="0" code="" scaleX="0.421052634716034" scaleY="2.52999997138977" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_horizontal" x="189" y="102" name="inst_9879A21A" locked="0" code="" scaleX="9.03999996185303" scaleY="0.469999998807907" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="718" y="373" name="inst_F0115151" locked="0" code="" scaleX="0.349999994039536" scaleY="2.42424249649048" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="443" y="373" name="inst_08F64B6B" locked="0" code="" scaleX="0.315789461135864" scaleY="2.4300000667572" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_horizontal" x="448" y="616" name="inst_21D70DE9" locked="0" code="" scaleX="2.71000003814697" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="1077" y="129" name="inst_AFF7244B" locked="0" code="" scaleX="0.263157904148102" scaleY="2.61999988555908" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="183" y="120" name="inst_9879A21A" locked="0" code="" scaleX="9.03999996185303" scaleY="0.469999998807907" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="710" y="397" name="inst_F0115151" locked="0" code="" scaleX="0.300000011920929" scaleY="2.55555558204651" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="443" y="399" name="inst_08F64B6B" locked="0" code="" scaleX="0.315789461135864" scaleY="2.49000000953674" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="635" y="582" name="inst_21D70DE9" locked="0" code="" scaleX="0.444444447755814" scaleY="0.100000001490116" colour="4294967295" rotation="-55"/>
     <instance objName="obj_hamster" x="561" y="475" name="inst_7259F4E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debug_text" x="312" y="48" name="inst_31EDE5B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="181" y="113" name="inst_809BA3C5" locked="0" code="" scaleX="0.421052634716034" scaleY="2.52999997138977" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_horizontal" x="189" y="366" name="inst_835C7101" locked="0" code="" scaleX="3.4300000667572" scaleY="0.368421047925949" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_horizontal" x="655" y="367" name="inst_84DF7CAE" locked="0" code="" scaleX="4.38000011444092" scaleY="0.315789461135864" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="428" y="296" name="inst_B86DB8E8" locked="0" code="" scaleX="0.0526315793395042" scaleY="0.689999997615814" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="428" y="112" name="inst_9E626E8D" locked="0" code="" scaleX="0.0526315793395042" scaleY="0.610000014305115" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="758" y="296" name="inst_50AAD4A4" locked="0" code="" scaleX="0.105263158679008" scaleY="0.709999978542328" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iss_wall_vertical" x="758" y="111" name="inst_0B1460C7" locked="0" code="" scaleX="0.105263158679008" scaleY="0.620000004768372" colour="4294967295" rotation="0"/>
-    <instance objName="obj_kitchen_table" x="1018" y="115" name="inst_B84E81B3" locked="0" code="" scaleX="0.429530203342438" scaleY="0.483050853013992" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wheel" x="194" y="114" name="inst_47841194" locked="0" code="" scaleX="0.479999989271164" scaleY="0.466981142759323" colour="4294967295" rotation="0"/>
-    <instance objName="obj_camera" x="839" y="118" name="inst_055A3144" locked="0" code="" scaleX="0.170278638601303" scaleY="0.174061432480812" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tomatoes" x="908" y="291" name="inst_2DA02CA8" locked="0" code="" scaleX="0.107395499944687" scaleY="0.106128551065922" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="179" y="128" name="inst_809BA3C5" locked="0" code="" scaleX="0.263157904148102" scaleY="2.65000009536743" colour="4294967295" rotation="-0.5"/>
+    <instance objName="obj_iss_wall_horizontal" x="181" y="392" name="inst_835C7101" locked="0" code="" scaleX="3.33333325386047" scaleY="0.368421047925949" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="646" y="391" name="inst_84DF7CAE" locked="0" code="" scaleX="4.38000011444092" scaleY="0.315789461135864" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="411" y="327" name="inst_B86DB8E8" locked="0" code="" scaleX="0.0526315793395042" scaleY="0.689999997615814" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="411" y="133" name="inst_9E626E8D" locked="0" code="" scaleX="0.0526315793395042" scaleY="0.610000014305115" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="749" y="326" name="inst_50AAD4A4" locked="0" code="" scaleX="0.105263158679008" scaleY="0.709999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_vertical" x="749" y="131" name="inst_0B1460C7" locked="0" code="" scaleX="0.105263158679008" scaleY="0.620000004768372" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wheel" x="183" y="130" name="inst_47841194" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_camera" x="1009" y="134" name="inst_055A3144" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tomatoes" x="198" y="325" name="inst_2DA02CA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debug_text" x="238" y="68" name="inst_F65B4343" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_health_bar" x="821" y="530" name="inst_F9EBDFEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_guitar" x="208" y="310" name="inst_9C38313C" locked="0" code="" scaleX="0.53600001335144" scaleY="0.52173912525177" colour="4294967295" rotation="8"/>
+    <instance objName="obj_guitar" x="893" y="314" name="inst_9C38313C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="450" y="647" name="inst_59034B8D" locked="0" code="" scaleX="2.58999991416931" scaleY="0.25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="526" y="581" name="inst_42252761" locked="0" code="" scaleX="1.09090912342072" scaleY="0.100000001490116" colour="4294967295" rotation="0"/>
+    <instance objName="obj_iss_wall_horizontal" x="503" y="618" name="inst_9095FEE8" locked="0" code="" scaleX="0.444444447755814" scaleY="0.100000001490116" colour="4294967295" rotation="55"/>
+    <instance objName="obj_sal" x="59" y="669" name="inst_29A65F03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_kitchen_table" x="455" y="130" name="inst_386D1FDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_food_bar_icon" x="809" y="500" name="inst_C9E5D947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_muscle_bar_icon" x="805" y="620" name="inst_41BA0362" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mental_bar_icon" x="802" y="567" name="inst_04FE1ADA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_muscle_bar" x="857" y="624" name="inst_E1D1D68B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mental_bar" x="858" y="563" name="inst_32EC61A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_food_bar" x="858" y="505" name="inst_C0CF804A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -2,22 +2,18 @@
 
 pointX = 295;
 pointY = 300;
-switch(irandom(3)) {
+switch(irandom(2)) {
     case 0:
-        pointX = random_range(295, 300);
-        pointY = random_range(120, 297);
+        pointX = random_range(203, 385);
+        pointY = random_range(200, 270);
         break;
     case 1:
-        pointX = random_range(200, 388);
-        pointY = random_range(220, 260);
+        pointX = random_range(435, 680);
+        pointY = random_range(230, 330);
         break;
     case 2:
-        pointX = random_range(776, 950);
-        pointY = random_range(175, 266);
-        break;
-    case 3:
-        pointX = random_range(457, 680);
-        pointY = random_range(391, 560);
+        pointX = random_range(765, 1000);
+        pointY = random_range(190, 290);
         break;
 }
 
